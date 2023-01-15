@@ -18,13 +18,15 @@ object DatabaseModule {
     @Singleton
     @Provides
     fun provideData(
-        @ApplicationContext context: Context
+        @ApplicationContext context: Context,
+        callback: NotesDatabase.RoomDatabaseCallback
     ): NotesDatabase =
         Room.databaseBuilder(
             context,
             NotesDatabase::class.java,
             DATABASE_NAME
-        ).fallbackToDestructiveMigration()
+        ).addCallback(callback)
+            .fallbackToDestructiveMigration()
             .build()
 
 
