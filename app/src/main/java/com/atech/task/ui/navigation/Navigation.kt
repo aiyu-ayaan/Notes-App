@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.atech.task.ui.screens.HomeScreen
+import com.atech.task.ui.screens.home_screen.components.HomeScreen
 
 @Composable
 fun Navigation() {
@@ -12,16 +12,8 @@ fun Navigation() {
     NavHost(navController = navController, startDestination = Screen.HomeScreen.route) {
         composable(
             route = Screen.HomeScreen.route,
-//            arguments = listOf(
-//                navArgument("notesList") {
-//                    type = NavType.ParcelableArrayType(NoteModel::class.java)
-//                    defaultValue = DUMMY_LIST
-//                }
-//            )
         ) {
-            HomeScreen(
-                navController = navController,
-            )
+            HomeScreen()
         }
     }
 }

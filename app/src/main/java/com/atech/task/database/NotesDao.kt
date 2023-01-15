@@ -20,9 +20,9 @@ interface NotesDao {
     @Delete
     suspend fun delete(note: NoteModel)
 
-    @Query("SELECT * FROM tasks")
+    @Query("SELECT * FROM notes_table")
     fun getAllNotes(): Flow<List<NoteModel>>
 
-    @Query("DELETE FROM tasks ")
+    @Query("DELETE FROM notes_table")
     suspend fun deleteAllNotes()
 }

@@ -1,5 +1,6 @@
 package com.atech.task.database
 
+import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.atech.task.utils.DUMMY_LIST
@@ -9,6 +10,11 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 import javax.inject.Provider
 
+@Database(
+    entities = [NoteModel::class],
+    version = 1,
+    exportSchema = false
+)
 abstract class NotesDatabase : RoomDatabase() {
 
     abstract fun notesDao(): NotesDao

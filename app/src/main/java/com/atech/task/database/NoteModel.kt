@@ -10,7 +10,7 @@ import kotlinx.parcelize.IgnoredOnParcel
 import kotlinx.parcelize.Parcelize
 
 @Keep
-@Entity(tableName = "tasks")
+@Entity(tableName = "notes_table")
 @Parcelize
 data class NoteModel(
     val title: String,
